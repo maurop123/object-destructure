@@ -23,10 +23,14 @@
 <script>
 export default {
   name: 'HelloWorld',
+  props: ['foo', 'bar', 'foobar'],
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted () {
+    console.log(this.foo, this.bar, this.foobar)
   }
 }
 </script>

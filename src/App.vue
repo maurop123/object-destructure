@@ -1,13 +1,26 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <hello-world v-bind="{ ...barfoo, foobar }" />
   </div>
 </template>
 
 <script>
+import HelloWorld from '@/components/HelloWorld'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    HelloWorld
+  },
+  data () {
+    return {
+      barfoo: {
+        foo: 'FOO',
+        bar: 'BAR',
+      },
+      foobar: 'FOOBAR'
+    }
+  }
 }
 </script>
 
